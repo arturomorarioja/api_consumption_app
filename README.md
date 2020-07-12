@@ -1,8 +1,8 @@
-# KEA.dk. Technology 1 - Front-End Sample App
+# KEA.dk. Front-End Sample App
 # API Consumption
 
 ## Purpose
-This is a sample front-end web application for the international students of the subject Technology 1 in the Academy Profession Degree in Computer Science at KEA (Københavns Erhvervsakademi / Copenhagen School of Design and Technology). 
+This is a sample front-end web application for the students at KEA (Københavns Erhvervsakademi / Copenhagen School of Design and Technology). 
 
 The application consumes three APIs:<br>
 - OpenWeather Current Weather: https://openweathermap.org/current

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+    KEA - Copenhagen School of Design and Technology
+    Weather App - API Call Front-End Example
+
+    Author: Arturo Mora-Rioja
+    Date:   May 2020
+-->
+<html lang="en">
+<head>
+    <title>KEA - API Consumption Sample</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/kea_icon.jpg" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/keys.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/kea.png" id="imgLogo">
+        </div>
+        <div class="header">API Consumption - Front-End Sample App</div>
+    </header>
+    <form class="boxed">
+        <div class="form-group">
+            <label for="txtTown">Please enter the name of a town</label><br>
+            <input type="text" name="txtTown" id="txtTown" maxlength="80" class="col-11">            
+        </div>               
+        <div class="form-group">
+            <button type="button" name="btnTownInfo" id="btnTownInfo" class="btn btn-primary">Town Information</button>&nbsp;&nbsp;&nbsp;
+            <span class="hidden red" id="errorMessage"></span>        
+        </div>
+    </form>            
+    <div class="boxed row" id="weatherInfo">
+        <div class="col-12 col-lg-2">
+            <h3 id="townName"></h3>
+            <h5 id="mainWeather"></h5>
+            <span id="temperature"></span> &deg;C (feels like <span id="feelsLike"></span> &deg;C)<br>
+            Humidity: <span id="humidity"></span>%<br>
+            Wind speed: <span id="wind"></span> m/s
+        </div>
+        <div class="col-12 col-lg-10" id="mapDiv">
+            <img id="map">
+        </div>
+    </div>
+    <div class="boxed" id="eventInfo">
+        <div id="eventHeader">Events</div>
+        <div id="eventList"></div>
+    </div>
+    <footer>
+        2020 Arturo Mora-Rioja
+    </footer>
+</body>
+</html>

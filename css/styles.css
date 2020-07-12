@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+header {
+    color: white;
+    background-color: rgb(39, 53, 74);
+    text-indent: 10px;
+    font-family: Tahoma, sans-serif;
+    font-weight: normal;
+}
+div.logo {
+    float: left;
+    padding-right: 20px;
+    background-color: rgb(234, 80, 71);
+    padding-top: 10px;
+    padding-bottom: 13px;
+}
+img#imgLogo {
+    width: 100px;
+    height: 32px;
+}
+div.header {
+    overflow: auto;
+    margin: 0px;
+    padding: 5px 5px 5px 20px;
+    font-size: 24px;
+    line-height: 45px;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(39, 53, 74);
+    margin: 0px;
+    padding: 5px;
+}
+
+/* Block classes */
+.boxed { 
+    border: thin solid black; 
+    padding-top: 10px;
+    padding-left: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+div#weatherInfo {
+    padding-bottom: 10px;    
+}
+h3 {
+    font-family: 'Times New Roman', serif;
+}
+.red {
+    color: red;
+}
+img#map {
+    height: 200px;
+    padding-right: 10px;
+}
+div#eventInfo {
+    margin-bottom: 40px;
+    padding: 0px;
+}
+div#eventHeader {
+    margin: 0px;
+    padding-left: 20px;
+    color: white;
+    background: darkblue;
+}
+div#eventList {
+    padding: 0px;
+}
+p.event {
+    margin: 0px;
+    padding: 10px;
+}
+p.oddEvent {
+    background: lightcyan;
+}

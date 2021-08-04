@@ -1,32 +1,59 @@
+:root {
+    --colorPrimary: black;
+    --colorSecondary: white;
+    --colorAlert: red;
+
+    --colorBgPrimary: rgb(39, 53, 74);
+    --colorBgHeader: rgb(234, 80, 71);
+    --colorBgTable: lightcyan;
+
+    --fontMain: Arial, Helvetica, sans-serif;
+    --fontSecondary: 'Garamond', 'Book Antiqua', 'Times New Roman', serif;
+    --fontHeader: Tahoma, sans-serif;
+
+    --imgWidth: 100px;
+    --imgHeight: 32px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
 body {
-    margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;    
+    margin: 0;
+    font-family: var(--fontMain);    
 }
 
 header {
-    color: white;
-    background-color: rgb(39, 53, 74);
-    text-indent: 10px;
-    font-family: Tahoma, sans-serif;
+    min-height: calc(var(--imgHeight) + 0.5rem);
+    color: var(--colorSecondary);
+    background-color: var(--colorBgPrimary);
+    font-family: var(--fontHeader);
     font-weight: normal;
 }
 div.logo {
-    float: left;
-    padding-right: 20px;
-    background-color: rgb(234, 80, 71);
-    padding-top: 10px;
-    padding-bottom: 13px;
+    float: none;
+    display: block;
+    background-color: var(--colorBgHeader);
+    padding: 0.25rem 0.75rem;
 }
 img#imgLogo {
-    width: 100px;
-    height: 32px;
+    width: var(--imgWidth);
+    height: var(--imgHeight);
 }
+@media (min-width: 570px) {
+    div.logo {
+        float: left;
+    }
+}
+
 div.header {
     overflow: auto;
-    margin: 0px;
-    padding: 5px 5px 5px 20px;
-    font-size: 24px;
-    line-height: 45px;
+    min-height: calc(var(--imgHeight) + 0.22rem);
+    padding: 0.25rem 1rem;
+    font-size: 1.4rem;
 }
 footer {
     position: fixed;
@@ -34,50 +61,94 @@ footer {
     width: 100%;
     text-align: center;
     color: white;
-    background-color: rgb(39, 53, 74);
-    margin: 0px;
-    padding: 5px;
+    background-color: var(--colorBgPrimary);
+    margin: 0;
+    padding: 0.25rem;
 }
 
 /* Block classes */
 .boxed { 
-    border: thin solid black; 
-    padding-top: 10px;
-    padding-left: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
+    border: thin solid var(--colorPrimary); 
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
 }
+
+/* Form */
+label[for="txtTown"] {
+    float: left;
+    width: 4rem;
+}
+input#txtTown {
+    width: calc(100% - 5rem);
+}
+button#btnTownInfo {
+    padding: 0.25rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+}
+#errorMessage {
+    display: block;    
+    margin-top: 0.5rem;
+}
+@media (min-width: 570px) {
+    #errorMessage {
+        display: inline;
+        margin: 0;
+    }
+}
+
+/* Display info */
 div#weatherInfo {
-    padding-bottom: 10px;    
+    display: none;
+    flex-flow: row wrap;
+    padding-bottom: 0.5rem;    
 }
 h3 {
-    font-family: 'Times New Roman', serif;
+    font-family: var(--fontSecondary);
+    font-size: 1.4rem;
 }
-.red {
-    color: red;
+#map {
+    display: block;
+    width: 100%;
+    height: 10rem;
+    margin-top: 0.5rem;
 }
-img#map {
-    height: 200px;
-    padding-right: 10px;
+@media (min-width: 768px) {
+    #weather {
+        float: left;
+    }
+    #map {
+        display: inline;
+        width: auto;
+        margin-left: 1rem;
+    }
+}
+.alert {
+    color: var(--colorAlert);
 }
 div#eventInfo {
-    margin-bottom: 40px;
-    padding: 0px;
+    display: none;
+    margin-bottom: 2rem;
+    padding: 0;
 }
 div#eventHeader {
-    margin: 0px;
-    padding-left: 20px;
-    color: white;
-    background: darkblue;
+    margin: 0;
+    padding-left: 1rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    color: var(--colorSecondary);
+    background: var(--colorBgPrimary);
 }
 div#eventList {
-    padding: 0px;
+    padding: 0;
 }
 p.event {
-    margin: 0px;
-    padding: 10px;
+    margin: 0;
+    padding: 0.5rem;
 }
 p.oddEvent {
-    background: lightcyan;
+    background: var(--colorBgTable);
+}
+p.event:last-of-type {
+    border-radius: 0 0 0.5rem 0.5rem;
 }

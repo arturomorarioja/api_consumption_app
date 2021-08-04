@@ -8,19 +8,25 @@ $(document).ready(function() {
  * - TicketMaster (developer.ticketmaster.com/). Events (Discovery API): https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/
  * 
  * @author  Arturo Mora-Rioja
- * @version 1.0, July 2020 
+ * @version 1.0.0 July 2020 
+ *          1.0.1 August 2021. Bootstrap removed
+ *                             Style improvements
  */
-    $("#weatherInfo").hide();
-    $("#eventInfo").hide();
+    
+    let latitude = 0;
+    let longitude = 0;
  
-    // "Check the Weather" button clicked 
-    $("#btnTownInfo").click(function() {
-        if ($("#txtTown").val().trim() == "") {
+    // "Town Information" button clicked 
+    $("#btnTownInfo").click(function(e) {
+        e.preventDefault();
+
+        const townName = $("#txtTown").val().trim();
+        if (townName == "") {
             showError("empty");
             return;
         }
 
-        const URL = 'https://api.openweathermap.org/data/2.5/weather?q=' + $("#txtTown").val() + '&units=metric&appid=' + weatherAPIKey;
+        const URL = 'https://api.openweathermap.org/data/2.5/weather?q=' + townName + '&units=metric&appid=' + weatherAPIKey;
 
         $("#errorMessage").hide();
         $.ajax({
@@ -36,15 +42,24 @@ $(document).ready(function() {
                 $("#humidity").html(data.main.humidity);
                 $("#wind").html(data.wind.speed);
 
-                showMap(data.coord.lon, data.coord.lat);
-                showEvents(data.name);
-                
                 $("#weatherInfo").show();
+
+                longitude = data.coord.lon;
+                latitude = data.coord.lat;
+
+                showMap(longitude, latitude);
+                showEvents(data.name);                
             })
             .fail(function(data) {
                 showError(data.status.toString());
             })
         });   
+
+    $(window).on("resize", function() {
+        if ($("#weatherInfo").css("display") !== "none") {
+            showMap(longitude, latitude);
+        }
+    });
 });
 
 // Shows an error message corresponding to the code it receives as parameter
@@ -65,7 +80,15 @@ function showError(code) {
 // Shows the map corresponding to the geographical coordinates received as parameters
 function showMap(longitude, latitude) {
     const userName = 'mapbox';
-    const mapWidth = ($("#mapDiv").width()).toFixed(0);
+    let mapWidth;
+
+    if ($("#map").css("display") === "block") {
+        mapWidth = ($("#weatherInfo").width()).toFixed(0);
+    } else {
+        const padding = 32;
+        mapWidth = ($("#weatherInfo").width() - $("#weather").width() - padding).toFixed(0);
+    }    
+    $("#map").width(mapWidth);
 
     const URL = 'https://api.mapbox.com/styles/v1/' + userName + '/streets-v11/static/' + 
         longitude + ',' + latitude + ',12,0,60/' + mapWidth + 'x200?access_token=' + mapAPIKey;
@@ -107,7 +130,7 @@ function showEvents(townName) {
             if (statusCode !== 'onsale') {
                 let status = $('<span />', {
                     "text": ' (' + statusCode + ')',
-                    "class": "red"
+                    "class": "alert"
                 });
                 event.append(status);
             }

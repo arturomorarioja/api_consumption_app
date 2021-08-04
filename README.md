@@ -17,4 +17,4 @@ var eventsAPIKey = '<key_provided_by_TicketMaster>';
 ```
 
 ## Tools
-JavaScript / jQuery / Bootstrap 4 / CSS3 / HTML5
+JavaScript / jQuery / CSS3 / HTML5

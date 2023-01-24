@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/kea_icon.jpg" type="image/ico">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="js/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="js/keys.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
@@ -25,30 +25,32 @@
         </div>
         <div class="header">API Consumption - Front-End Sample App</div>
     </header>
-    <form class="boxed">
-        <div>
-            <label for="txtTown">Town</label>
-            <input type="text" name="txtTown" id="txtTown" maxlength="80">            
-        </div>               
-        <div>
-            <button type="submit" name="btnTownInfo" id="btnTownInfo">Town Information</button>&nbsp;&nbsp;&nbsp;
-            <span class="hidden alert" id="errorMessage"></span>        
-        </div>
-    </form>            
-    <div class="boxed" id="weatherInfo">
-        <div id="weather">
-            <h3 id="townName"></h3>
-            <h5 id="mainWeather"></h5>
-            <span id="temperature"></span> &deg;C (feels like <span id="feelsLike"></span> &deg;C)<br>
-            Humidity: <span id="humidity"></span>%<br>
-            Wind speed: <span id="wind"></span> m/s
-        </div>
-        <img id="map">
-    </div>
-    <div class="boxed" id="eventInfo">
-        <div id="eventHeader">Events</div>
-        <div id="eventList"></div>
-    </div>
+    <main>
+        <form class="boxed">
+            <div>
+                <label for="txtTown">Town</label>
+                <input type="text" name="txtTown" id="txtTown" maxlength="80">            
+            </div>               
+            <div>
+                <button type="submit" name="btnTownInfo" id="btnTownInfo">Town Information</button>&nbsp;&nbsp;&nbsp;
+                <span class="hidden alert" id="errorMessage"></span>        
+            </div>
+        </form>            
+        <section class="boxed" id="weatherInfo">
+            <div id="weather">
+                <h3 id="townName"></h3>
+                <h5 id="mainWeather"></h5>
+                <span id="temperature"></span> &deg;C (feels like <span id="feelsLike"></span> &deg;C)<br>
+                Humidity: <span id="humidity"></span>%<br>
+                Wind speed: <span id="wind"></span> m/s
+            </div>
+            <img id="map">
+        </section>
+        <section class="boxed" id="eventInfo">
+            <div id="eventHeader">Events</div>
+            <div id="eventList"></div>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2021 Arturo Mora-Rioja</p>
     </footer>

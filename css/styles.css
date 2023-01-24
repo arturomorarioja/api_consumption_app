@@ -33,7 +33,7 @@ header {
     font-family: var(--fontHeader);
     font-weight: normal;
 }
-div.logo {
+.logo {
     float: none;
     display: block;
     background-color: var(--colorBgHeader);
@@ -44,12 +44,12 @@ img#imgLogo {
     height: var(--imgHeight);
 }
 @media (min-width: 570px) {
-    div.logo {
+    .logo {
         float: left;
     }
 }
 
-div.header {
+.header {
     overflow: auto;
     min-height: calc(var(--imgHeight) + 0.22rem);
     padding: 0.25rem 1rem;
@@ -99,7 +99,7 @@ button#btnTownInfo {
 }
 
 /* Display info */
-div#weatherInfo {
+#weatherInfo {
     display: none;
     flex-flow: row wrap;
     padding-bottom: 0.5rem;    
@@ -127,19 +127,19 @@ h3 {
 .alert {
     color: var(--colorAlert);
 }
-div#eventInfo {
+#eventInfo {
     display: none;
     margin-bottom: 2rem;
     padding: 0;
 }
-div#eventHeader {
+#eventHeader {
     margin: 0;
     padding-left: 1rem;
     border-radius: 0.25rem 0.25rem 0 0;
     color: var(--colorSecondary);
     background: var(--colorBgPrimary);
 }
-div#eventList {
+#eventList {
     padding: 0;
 }
 p.event {

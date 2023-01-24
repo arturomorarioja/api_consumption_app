@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-undef */
 'use strict';
-$(document).ready(function() {
+$(function() {
 /**
  * Front-end API consumption - sample application
  * 
@@ -110,7 +110,7 @@ function showEvents(townName) {
         type: 'GET'
     }).
     done(function(data) {
-        if (data.page.totalElements == 0) {
+        if (data.page.totalElements === 0) {
             $('#eventList').html('There are no events scheduled for the selected town');
             $('#eventInfo').show();
             return;

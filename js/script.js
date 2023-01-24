@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-undef */
-'use strict';
+import {weatherAPIKey, mapAPIKey, eventsAPIKey} from './keys.js';
+
 $(function() {
 /**
  * Front-end API consumption - sample application
